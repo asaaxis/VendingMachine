@@ -38,29 +38,30 @@ end
 
 class Drink
 
-def initialize
-  @cola_stock = [
-  # {name: "cola", price: 120},
-  # {name: "cola", price: 120},
-  # {name: "cola", price: 120},
-  # {name: "cola", price: 120},
-  # {name: "cola", price: 120}
-  ]
-end
+  def initialize
+    @cola_stock = [
+    {name: "cola", price: 120},
+    {name: "cola", price: 120},
+    {name: "cola", price: 120},
+    {name: "cola", price: 120},
+    {name: "cola", price: 120}
+    ]
+  end
 
-def juice_info
-  if @cola_stock.count || @cola_stock.nil?
-    puts @cola_stock[0][:name]
-    puts @cola_stock[0][:price]
-    #p cola_stock.shift
-    p @cola_stock.count
-  else
-    p "在庫なし"
+  def juice_info
+    if  @cola_stock.any?
+      puts @cola_stock[0][:name]
+      puts @cola_stock[0][:price]
+      #p cola_stock.shift
+      p @cola_stock.count
+    else
+      p "在庫なし"
+    end
   end
 end
 
-end
-
-class Keisan
+class Purchase
+  vm = VendingMachine.new
+  drink = Drink.new
 
 end
